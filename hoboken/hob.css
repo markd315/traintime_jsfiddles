@@ -1,0 +1,38 @@
+.md-list.md-double-line {
+  width: 600px;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 2px;
+}
+
+.md-list-item {
+  width: 800px;
+  max-width: 90%;
+  height: 64px;
+  max-height: 3%;
+  padding-top: -90px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+.nyc {
+  color: #003884 !important;
+}
+
+.nj {
+  color: #FFCA66 !important;
+}
+
+.up {
+  color: #00dd00 !important;
+}
+
+.down {
+  color: #dd0000 !important;
+}
+
+.md-list.md-double-line .md-list-item-content {
+    min-height: 36px !important;
+}

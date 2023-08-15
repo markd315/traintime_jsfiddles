@@ -1,0 +1,39 @@
+.md-list.md-double-line {
+  width: 650px;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 0px;
+}
+
+.md-list-item {
+  width: 650px;
+  max-width: 90%;
+  height: 16px;
+  max-height: 2.5%;
+  padding-top: -90px;
+  padding-bottom: 0px;
+  position: relative;
+  margin: 0px;
+}
+
+.blue {
+  color: #003884 !important;
+}
+
+.ylw {
+  color: #FFCA66 !important;
+}
+
+.up {
+  color: #00dd00 !important;
+}
+
+.down {
+  color: #dd0000 !important;
+}
+
+.md-list.md-double-line .md-list-item-content {
+    min-height: 16px !important;
+}

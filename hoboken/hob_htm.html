@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+  </head>
+  <body>
+    <div id="app">
+      <md-toolbar :md-elevation="1">
+        <span class="md-title">Realtime PATH Arrivals</span>
+        <md-subheader>by&nbsp;<a href="https://razza.dev" target="_blank" style="white-space: nowrap">Matt Razza</a>,&nbsp;Mark Davis&nbsp;| Data quality not guaranteed. This is not affiliated with PATH or PANYNJ.</md-subheader>
+      </md-toolbar>
+      <md-list class="md-double-line" v-for="station in stations">
+        <md-subheader>{{ station.name }}</md-subheader>
+        <md-divider></md-divider>
+        
+        <md-list-item v-for="train in station.trains">
+        <div v-for="terminal in terminals_nyc">
+          <md-icon v-if="train.name === terminal" class="nyc">swipe_right_alt</md-icon>
+        </div>
+        <div v-for="terminal in terminals_nj">
+          <md-icon v-if="train.name === terminal" class="nj">swipe_left_alt</md-icon>
+        </div>
+        <md-icon v-if="train.dir == '1'" class="up">swipe_up_alt</md-icon>
+        <md-icon v-if="train.dir == '0'" class="down">swipe_down_alt</md-icon>
+        <div v-for="color in train.line_color">
+          <md-icon v-bind:style="{color: color}">train</md-icon> 
+        </div>
+        
+        <span class="md-list-item-text">{{ train.name }}</span>
+        <div class="md-list-action">
+          <span>{{ train.arrival_time }}</span>
+        </div>
+        </md-list-item>
+        </md-list>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/vue-material@beta"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+  </body>
+</html>
+
